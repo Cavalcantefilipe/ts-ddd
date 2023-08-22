@@ -1,6 +1,6 @@
 import Address from "./adress";
 
-class Customer {
+export default class Customer {
     
     _id: string;
     _name: string;
