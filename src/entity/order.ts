@@ -14,6 +14,10 @@ export default class Order{
         this._total = this.total();
     }
 
+    get id(): string{
+        return this._id;
+    }
+
     total(): number{
         return this._items.reduce((total, item) => total + item._price, 0);
     }
