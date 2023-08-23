@@ -2,12 +2,12 @@ import { Column, Model, PrimaryKey, Table } from 'sequelize-typescript';
 
 @Table({
     tableName: 'products',
-    timestamps: true,
+    timestamps: false,
 })
 export default class ProductModel extends Model {
 
     @PrimaryKey
-    @Column
+    @Column({ allowNull: false })
     declare id: string;
 
     @Column({ allowNull: false })
