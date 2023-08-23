@@ -26,13 +26,21 @@ describe("Order unit tests", () => {
 
     it("should calculate total", () => {
 
-        let OrderItem1 = new OrderItem("123", "Item 1", 10);
-        let OrderItem2 = new OrderItem("321", "Item 2", 20);
+        let OrderItem1 = new OrderItem("123", "Item 1", 10, "p1", 2);
+        let OrderItem2 = new OrderItem("321", "Item 2", 20, "p2", 2);
             
         let order = new Order("123", "123", [OrderItem1, OrderItem2]);
     
-            expect(order.total()).toBe(30);
-        });
+        expect(order.total()).toBe(60);
+    });
+
+    it("should check if the qtd is greater than 0", () => {
+    
+        expect(() => {
+            let OrderItem1 = new OrderItem("123", "Item 1", 10, "p1", 0);  
+            let order = new Order("123", "123", [OrderItem1]);
+        }).toThrowError('Quantity must be greater than 0');
+    });
 
 
 });
