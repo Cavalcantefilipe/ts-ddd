@@ -4,7 +4,7 @@ import CustomerRepository from "./customer.repository";
 import Customer from "../../domain/entity/customer";
 import Address from "../../domain/entity/adress";
 
-describe("Product repository test", () => {
+describe("Customer repository test", () => {
 
     let sequelize: Sequelize;
 
